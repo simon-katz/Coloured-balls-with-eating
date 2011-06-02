@@ -1,0 +1,1218 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style>
+.AlignLeft { text-align: left; }
+.AlignCenter { text-align: center; }
+.AlignRight { text-align: right; }
+body { font-family: sans-serif; font-size: 11pt; }
+td { vertical-align: top; padding-left: 4px; padding-right: 4px; }
+
+tr.SectionGap td { font-size: 4px; border-left: none; border-top: none; border-bottom: 1px solid Black; border-right: 1px solid Black; }
+tr.SectionAll td { border-left: none; border-top: none; border-bottom: 1px solid Black; border-right: 1px solid Black; }
+tr.SectionBegin td { border-left: none; border-top: none; border-right: 1px solid Black; }
+tr.SectionEnd td { border-left: none; border-top: none; border-bottom: 1px solid Black; border-right: 1px solid Black; }
+tr.SectionMiddle td { border-left: none; border-top: none; border-right: 1px solid Black; }
+tr.SubsectionAll td { border-left: none; border-top: none; border-bottom: 1px solid Gray; border-right: 1px solid Black; }
+tr.SubsectionEnd td { border-left: none; border-top: none; border-bottom: 1px solid Gray; border-right: 1px solid Black; }
+table.fc { border-top: 1px solid Black; border-left: 1px solid Black; width: 100%; font-family: monospace; font-size: 10pt; }
+td.TextLineInsigAdd { background-color: #F7F7FF; }
+td.TextLineInsigDel { background-color: #F7F7FF; text-decoration: line-through; }
+td.TextLineInsigDiffMod { background-color: #F7F7FF; }
+td.TextLineInsigLeftMod { background-color: #F7F7FF; }
+td.TextLineInsigRightMod { background-color: #F7F7FF; }
+td.TextLineNum { color: #827357; background-color: #F2F2F2; }
+td.TextLineSigAdd { background-color: #FFEBEB; }
+td.TextLineSigDel { background-color: #FFEBEB; text-decoration: line-through; }
+td.TextLineSigDiffMod { background-color: #FFEBEB; }
+td.TextLineSigLeftMod { background-color: #FFEBEB; }
+td.TextLineSigRightMod { background-color: #FFEBEB; }
+.TextSegInsigDiff { color: #0000FF; }
+.TextSegReplacedDiff { color: #0000FF; font-style: italic; }
+.TextSegSigDiff { color: #FF0000; }
+.TextSegElementComment { color: #786A41; }
+.TextSegElementString { color: #3A7726; }
+</style>
+</head>
+<body>
+london-clojure-dojo-coloured-balls-early-may-2011-team-5-sk-changes<br/>
+Produced: 2011-06-02 12:58:53<br/>
+&nbsp; &nbsp;
+<br/>
+Mode:&nbsp; All &nbsp;
+<br/>
+Left file: d:\development-100\__for-sync\Clojure-learning-with-Emacs-etc\london-clojure-dojo\2011-05-early-may\team-5\src\coloured_balls\core.clj &nbsp;
+<br/>
+Right file: d:\development-100\__for-sync\Clojure-learning-with-Emacs-etc\london-clojure-dojo\2011-05-early-may\team-5-with-sk-mods-using-git\Coloured-Balls\src\coloured_balls\core.clj &nbsp;
+<br/>
+<table class="fc" cellspacing="0" cellpadding="0">
+<tr class="SectionAll">
+<td>(ns coloured-balls.core</td>
+<td class="AlignCenter">=</td>
+<td>(ns coloured-balls.core</td>
+</tr>
+<tr class="SectionBegin">
+<td>&nbsp;</td>
+<td class="AlignCenter">&lt;&gt;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegInsigDiff">;; sk-change: Changed :use to :require so that I can easily see</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegInsigDiff">;; when rosado.processing is used.&nbsp; (In production code, I think I</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegInsigDiff">;; would be tempted to use the :as option to :require.)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod">&nbsp; (:<span class="TextSegSigDiff">us</span>e [rosado.processing]</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp; (:<span class="TextSegSigDiff">requir</span>e [rosado.processing]</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextLineInsigDiffMod">&nbsp; &nbsp; &nbsp; &nbsp; [rosado.processing.applet])</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigDiffMod">&nbsp; &nbsp; &nbsp; &nbsp; <span class="TextSegInsigDiff">&nbsp; &nbsp; </span>[rosado.processing.applet])</td>
+</tr>
+<tr class="SectionBegin">
+<td>&nbsp; (:gen-class))</td>
+<td class="AlignCenter">=</td>
+<td>&nbsp; (:gen-class))</td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td><span class="TextSegElementComment">;; here's a function which will be called by Processing's (PApplet)</span></td>
+<td class="AlignCenter">&nbsp;</td>
+<td><span class="TextSegElementComment">;; here's a function which will be called by Processing's (PApplet)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td><span class="TextSegElementComment">;; draw method every frame. Place your code here. If you eval it</span></td>
+<td class="AlignCenter">&nbsp;</td>
+<td><span class="TextSegElementComment">;; draw method every frame. Place your code here. If you eval it</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td><span class="TextSegElementComment">;; interactively, you can redefine it while the applet is running and</span></td>
+<td class="AlignCenter">&nbsp;</td>
+<td><span class="TextSegElementComment">;; interactively, you can redefine it while the applet is running and</span></td>
+</tr>
+<tr class="SectionEnd">
+<td><span class="TextSegElementComment">;; see effects immediately</span></td>
+<td class="AlignCenter">&nbsp;</td>
+<td><span class="TextSegElementComment">;; see effects immediately</span></td>
+</tr>
+<tr class="SectionBegin">
+<td>&nbsp;</td>
+<td class="AlignCenter">&lt;&gt;</td>
+<td class="TextLineInsigRightMod">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegSigDiff">(defrecord</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">ball</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; </span><span class="TextSegInsigDiff">;; sk-change:</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; </span><span class="TextSegInsigDiff">;; - Changed defstruct to defrecord.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; </span><span class="TextSegInsigDiff">;;&nbsp;&nbsp; - defstruct is old.&nbsp; defrecord was new in Clojure 1.2.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; </span><span class="TextSegInsigDiff">;;&nbsp;&nbsp; - The book &quot;Practical Clojure&quot; says (on page 185) &quot;prefer</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; </span><span class="TextSegInsigDiff">;;&nbsp; &nbsp;&nbsp; defrecord to defstruct in all cases&quot;.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; </span><span class="TextSegInsigDiff">;;&nbsp;&nbsp; - At the time of writing this I don't have an internet</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; </span><span class="TextSegInsigDiff">;;&nbsp; &nbsp;&nbsp; connection, so I can't find an on-line reference.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; </span><span class="TextSegInsigDiff">;; - Added id (a string) to ball.&nbsp; This is displayed in the middle</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; </span><span class="TextSegInsigDiff">;;&nbsp;&nbsp; of the graphic for the ball.&nbsp; I found this useful when</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; </span><span class="TextSegInsigDiff">;;&nbsp;&nbsp; debugging some changes.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; </span><span class="TextSegInsigDiff">;; - Changed radius to diameter.&nbsp; (The original was using the wrong</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; </span><span class="TextSegInsigDiff">;;&nbsp;&nbsp; word.)</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextLineSigDiffMod"><span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">defstruct</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">ball</span> <span class="TextSegSigDiff">:</span>x <span class="TextSegSigDiff">:</span>y <span class="TextSegSigDiff">:</span>vx <span class="TextSegSigDiff">:</span>vy <span class="TextSegSigDiff">:</span>red <span class="TextSegSigDiff">:</span>blue <span class="TextSegSigDiff">:</span>green <span class="TextSegSigDiff">:ra</span>di<span class="TextSegSigDiff">us</span>)</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; </span><span class="TextSegSigDiff">[id</span> x y vx vy red blue green di<span class="TextSegSigDiff">ameter]</span>)</td>
+</tr>
+<tr class="SectionBegin">
+<td>&nbsp;</td>
+<td class="AlignCenter">=</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="SectionEnd">
+<td>(defn draw-ball [ball]</td>
+<td class="AlignCenter">&nbsp;</td>
+<td>(defn draw-ball [ball]</td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextLineSigDiffMod">&nbsp; (fill (:red ball) (:green ball) (:blue ball))</td>
+<td class="AlignCenter">&lt;&gt;</td>
+<td class="TextLineSigDiffMod">&nbsp; (<span class="TextSegSigDiff">rosado.processing/</span>fill (:red ball) (:green ball) (:blue ball))</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod">&nbsp; (ellipse (:x ball) (:y ball) (:<span class="TextSegSigDiff">ra</span>di<span class="TextSegSigDiff">us</span> ball) (:<span class="TextSegSigDiff">ra</span>di<span class="TextSegSigDiff">us</span> ball<span class="TextSegSigDiff">)</span>))</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp; (<span class="TextSegSigDiff">rosado.processing/</span>ellipse (:x ball) (:y ball) (:di<span class="TextSegSigDiff">ameter</span> ball) (:di<span class="TextSegSigDiff">ameter</span> ball))</td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegInsigDiff">;; sk-change: Draw the id of the ball at its centre.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegSigDiff">(rosado.processing/fill</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">0</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">0</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">0)</span></td>
+</tr>
+<tr class="SectionEnd">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegSigDiff">(rosado.processing/string-&gt;text</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(:id</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">ball)</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(:x</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">ball)</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(:y</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">ball)))</span></td>
+</tr>
+<tr class="SectionAll">
+<td>&nbsp;</td>
+<td class="AlignCenter">=</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="SectionBegin">
+<td>&nbsp;</td>
+<td class="AlignCenter">&lt;&gt;</td>
+<td class="TextLineSigRightMod"><span class="TextSegSigDiff">(def</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">window-width</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">200)</span><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegInsigDiff">; sk-change: Added this.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegSigDiff">(def</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">window-height</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">600)</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegInsigDiff">; sk-change: Added this.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">;; sk-change: Make the window tall and thin so I can display it to the</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">;; side of my editor window and easily see the effect of changes when</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">;; I evaluate them.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod">(defn make-ball []</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">(defn make-ball [<span class="TextSegSigDiff">id</span>]</td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegInsigDiff">;; sk-change:</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegInsigDiff">;; - Takes id as an argument.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegInsigDiff">;; - Added wh and random-velocity-component.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegInsigDiff">;; - Take account of ball's radius when setting initial position, so</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegInsigDiff">;;&nbsp;&nbsp; ball is completely within the window.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegSigDiff">(let</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">[wh</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(rand-int</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">70)]</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; </span><span class="TextSegSigDiff">(letfn</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">[(random-velocity-component</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">[]</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">(-</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(*</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">2</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(rand-int</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">5))</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">5))]</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod">&nbsp; (<span class="TextSegSigDiff">struct-map</span><span class="TextSegInsigDiff">&nbsp;</span>ball</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp; <span class="TextSegInsigDiff">&nbsp; &nbsp; </span>(ball<span class="TextSegSigDiff">.</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">id</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod">&nbsp; &nbsp; <span class="TextSegSigDiff">:x</span> (rand-int <span class="TextSegSigDiff">400</span>)</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp; &nbsp; <span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">(+</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">wh</span> (rand-int <span class="TextSegSigDiff">(-</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">window-width</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(*</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">2</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">wh)))</span>)</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod">&nbsp; &nbsp; <span class="TextSegSigDiff">:y</span> (rand-int <span class="TextSegSigDiff">400</span>)</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp; &nbsp; <span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">(+</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">wh</span> (rand-<span class="TextSegSigDiff">int</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(-</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">w</span>in<span class="TextSegSigDiff">dow-heigh</span>t <span class="TextSegSigDiff">(*</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">2</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">wh)))</span>)</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod">&nbsp; &nbsp; <span class="TextSegSigDiff">:vx</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(-</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(*</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">2</span><span class="TextSegInsigDiff">&nbsp;</span>(rand<span class="TextSegSigDiff">-</span><span class="TextSegSigDiff">i</span>nt<span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">5))</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">5</span>)</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp; &nbsp; <span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp;&nbsp;</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegInsigDiff">&nbsp;</span>(rand<span class="TextSegSigDiff">om-velocity-compone</span>nt)</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod">&nbsp; &nbsp; <span class="TextSegSigDiff">:vy</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(-</span><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegSigDiff">(*</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">2</span><span class="TextSegInsigDiff">&nbsp;</span>(rand<span class="TextSegSigDiff">-</span><span class="TextSegSigDiff">i</span><span class="TextSegSigDiff">n</span>t<span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">5))</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">5</span>)</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp; &nbsp; <span class="TextSegInsigDiff">&nbsp; &nbsp;&nbsp; </span><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegInsigDiff">&nbsp;</span>(rand<span class="TextSegSigDiff">om-velocity-componen</span>t)</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod">&nbsp; &nbsp; <span class="TextSegSigDiff">:red</span><span class="TextSegInsigDiff">&nbsp;</span>(rand-int 256)</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp; &nbsp; <span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span>(rand-int 256)</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod">&nbsp; &nbsp; <span class="TextSegSigDiff">:blue</span><span class="TextSegInsigDiff">&nbsp;</span>(rand-int 256)</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp; &nbsp; <span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span>(rand-int 256)</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod">&nbsp; &nbsp; <span class="TextSegSigDiff">:green</span><span class="TextSegInsigDiff">&nbsp;</span>(rand-int 256)</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp; &nbsp; <span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span>(rand-int 256)</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextLineSigDiffMod">&nbsp; &nbsp; <span class="TextSegSigDiff">:radius</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(rand-int</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">70</span>)))</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp; &nbsp; <span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">wh)</span>)))</td>
+</tr>
+<tr class="SectionAll">
+<td>&nbsp;</td>
+<td class="AlignCenter">=</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextLineSigDiffMod">(def n<span class="TextSegSigDiff">o</span>-balls 10)</td>
+<td class="AlignCenter">&lt;&gt;</td>
+<td class="TextLineSigDiffMod">(def n-balls 10)</td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">;; sk-change: make-ball now takes an argument, so re-arranged the code</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">;; that calls it.</span></td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextLineSigDiffMod">(def ball-state (atom (<span class="TextSegSigDiff">t</span>ake<span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">no</span>-balls (r<span class="TextSegSigDiff">epeat</span><span class="TextSegSigDiff">edly</span> <span class="TextSegSigDiff">make</span>-ball))))</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">(def ball-state (atom (<span class="TextSegSigDiff">map</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(comp</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">m</span>ake-ball<span class="TextSegInsigDiff">&nbsp;</span>s<span class="TextSegSigDiff">tr)</span> (r<span class="TextSegSigDiff">ange</span> <span class="TextSegSigDiff">n</span>-ball<span class="TextSegSigDiff">s</span>))))</td>
+</tr>
+<tr class="SectionBegin">
+<td>&nbsp;</td>
+<td class="AlignCenter">=</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="SectionEnd">
+<td>(defn move [ball]</td>
+<td class="AlignCenter">&nbsp;</td>
+<td>(defn move [ball]</td>
+</tr>
+<tr class="SectionBegin">
+<td>&nbsp;</td>
+<td class="AlignCenter">&lt;&gt;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegInsigDiff">;; sk-change: Changed nested calls of update-in to a single call of</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegInsigDiff">;; assoc.&nbsp; I think this is easier to read.&nbsp; YMMV.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod">&nbsp; (<span class="TextSegSigDiff">upd</span><span class="TextSegSigDiff">ate-in</span></td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp; (<span class="TextSegSigDiff">assoc</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">ball</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod">&nbsp;&nbsp; <span class="TextSegSigDiff">(update-in</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">ball</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">[</span>:x<span class="TextSegSigDiff">]</span> <span class="TextSegSigDiff">#</span>(+ <span class="TextSegSigDiff">%</span> (:vx ball<span class="TextSegSigDiff">)</span>))</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp;&nbsp;&nbsp;<span class="TextSegInsigDiff">&nbsp;</span>:x (+<span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(:x</span> <span class="TextSegSigDiff">ball)</span> (:vx ball))</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigLeftMod"><span class="TextSegInsigDiff">&nbsp;&nbsp; </span><span class="TextSegSigDiff">[:y]</span></td>
+<td class="AlignCenter">&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextLineSigDiffMod">&nbsp;&nbsp; <span class="TextSegSigDiff">#</span>(+ <span class="TextSegSigDiff">%</span> (:vy ball))))</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp;&nbsp;&nbsp;<span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">:y</span><span class="TextSegInsigDiff">&nbsp;</span>(+ <span class="TextSegSigDiff">(:y</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">ball)</span> (:vy ball))))</td>
+</tr>
+<tr class="SectionAll">
+<td>&nbsp;</td>
+<td class="AlignCenter">=</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="SectionBegin">
+<td>&nbsp;</td>
+<td class="AlignCenter">&lt;&gt;</td>
+<td class="TextLineInsigRightMod">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">;; sk-change: Added wall-bounciness.&nbsp; (Just playing.)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">;; A value less than 1 causes balls to slow down when bouncing off a</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">;; wall.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">;; A value greater than 1 causes balls to speed up when bouncing off a</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">;; wall.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">;; A value of 1 causes no change to the speed.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegSigDiff">(def</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">wall-bounciness</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">1)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegSigDiff">(defn</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">apply-wall-bounciness</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">[x]</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegSigDiff">(let</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">[signum</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(cond</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(&lt;</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">x</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">0)</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">-1</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">(=</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">x</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">0)</span><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegSigDiff">0</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">:else</span><span class="TextSegInsigDiff">&nbsp; &nbsp; </span><span class="TextSegSigDiff">1)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">abs</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(Math/abs</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">x)]</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; </span><span class="TextSegSigDiff">(*</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">signum</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">(if</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(&lt;</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">wall-bounciness</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">1)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">(max</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">1</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(*</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">abs</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">wall-bounciness))</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">(min</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">20</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(*</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">abs</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">wall-bounciness))))))</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod">&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod">(defn collide [ball]</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">(defn <span class="TextSegSigDiff">maybe-</span>collide<span class="TextSegSigDiff">-with-wall</span> [ball]<span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegInsigDiff">; sk-change: Renamed. (Was collide.)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegInsigDiff">;; sk-change:</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegInsigDiff">;; - I think there was a mini-bug in the original: if a ball hit</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegInsigDiff">;;&nbsp;&nbsp; two walls at the same time, it would bounce off only one wall</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegInsigDiff">;;&nbsp;&nbsp; on this iteration and would bounce off the other wall on the</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegInsigDiff">;;&nbsp;&nbsp; next iteration, thereby going into one of the walls a little</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegInsigDiff">;;&nbsp;&nbsp; bit.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegInsigDiff">;; - Other than fixing the mini-bug, I've perhaps made this worse</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegInsigDiff">;;&nbsp;&nbsp; than the original -- it's certainly considerably more lines of</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegInsigDiff">;;&nbsp;&nbsp; code, and it's not very clear.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod">&nbsp; (let [<span class="TextSegSigDiff">bo</span><span class="TextSegSigDiff">unce-positive</span> (<span class="TextSegSigDiff">fn</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">[key]</span> (<span class="TextSegSigDiff">upd</span><span class="TextSegSigDiff">a</span>te<span class="TextSegSigDiff">-in</span> ball <span class="TextSegSigDiff">[key]</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">#(Math/abs</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">%))</span>)</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp; (let [<span class="TextSegSigDiff">radiu</span><span class="TextSegSigDiff">s</span> (<span class="TextSegSigDiff">/</span> (<span class="TextSegSigDiff">:</span><span class="TextSegSigDiff">diame</span>te<span class="TextSegSigDiff">r</span> ball<span class="TextSegSigDiff">)</span> <span class="TextSegSigDiff">2</span>)</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">bounc</span>e-<span class="TextSegSigDiff">neg</span>a<span class="TextSegSigDiff">tive</span> (fn [<span class="TextSegSigDiff">key]</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(upda</span><span class="TextSegSigDiff">te-i</span><span class="TextSegSigDiff">n</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">ball</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">[</span>key<span class="TextSegSigDiff">]</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">#(-</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(Math/abs</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">%))))]</span></td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">mak</span>e-a<span class="TextSegSigDiff">djust-fun</span> (fn [<span class="TextSegSigDiff">posit</span><span class="TextSegSigDiff">ion-</span>key</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod">&nbsp; &nbsp; <span class="TextSegSigDiff">(</span><span class="TextSegSigDiff">cond</span></td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp; &nbsp; <span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">velocity-key</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod">&nbsp; &nbsp;&nbsp; <span class="TextSegSigDiff">(&lt;</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(:x</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">ball)</span><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">(/</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(:ra</span>di<span class="TextSegSigDiff">u</span>s<span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">ball)</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">2))</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(bou</span>nce-<span class="TextSegSigDiff">positive</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">:vx)</span></td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp; &nbsp;&nbsp; <span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;</span><span class="TextSegInsigDiff">&nbsp;</span>dis<span class="TextSegSigDiff">t</span><span class="TextSegSigDiff">a</span>nce-<span class="TextSegSigDiff">to-wall-fun</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod">&nbsp; &nbsp;&nbsp; <span class="TextSegSigDiff">(&lt;</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(-</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">400</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(:x</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">ball))</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(/</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(:radius</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">ball)</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">2))</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(bounce</span><span class="TextSegSigDiff">-nega</span>ti<span class="TextSegSigDiff">ve</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">:vx)</span></td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp; &nbsp;&nbsp; <span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">n</span><span class="TextSegSigDiff">ew-posi</span>ti<span class="TextSegSigDiff">on]</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod">&nbsp; &nbsp;&nbsp; (<span class="TextSegSigDiff">&lt;</span> <span class="TextSegSigDiff">(:y</span><span class="TextSegInsigDiff">&nbsp;</span>ball<span class="TextSegSigDiff">)</span><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">(/</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(:radius</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">ball)</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">2))</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(bounce-positive</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">:vy)</span><span class="TextSegInsigDiff">&nbsp;</span></td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp; &nbsp;&nbsp; <span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span>(<span class="TextSegSigDiff">fn</span> <span class="TextSegSigDiff">[</span>ball<span class="TextSegSigDiff">]</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod">&nbsp; &nbsp;&nbsp; (&lt; (<span class="TextSegSigDiff">-</span> <span class="TextSegSigDiff">400</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(:y</span><span class="TextSegInsigDiff">&nbsp;</span>ball<span class="TextSegSigDiff">)</span>)<span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(/</span> <span class="TextSegSigDiff">(:</span>radius<span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">ball)</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">2))</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(bounce-negative</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">:vy</span>)</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp; &nbsp;&nbsp; <span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span>(<span class="TextSegSigDiff">if</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(</span>&lt; (<span class="TextSegSigDiff">distance-to-wall-fun</span> ball) radius)</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod">&nbsp; &nbsp;&nbsp; <span class="TextSegSigDiff">:</span><span class="TextSegSigDiff">otherwise</span> ball<span class="TextSegSigDiff">)))</span></td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp; &nbsp;&nbsp; <span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">(assoc</span> ball</td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">velocity-key</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(apply-wall-bounciness</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">(-</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(velocity-key</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">ball)))</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">position-key</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">new-position)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">ball)))</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">adjust-left</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(make-adjust-fun</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">:x</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">:vx</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">:x</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">radius)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">adjust-right</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(make-adjust-fun</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">:x</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">:vx</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">#(-</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">window-width</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(:x</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">%))</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">(-</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">window-width</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">radius))</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">adjust-top</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(make-adjust-fun</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">:y</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">:vy</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">:y</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">radius)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">adjust-bottom</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(make-adjust-fun</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">:y</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">:vy</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">#(-</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">window-height</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(:y</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">%))</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">(-</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">window-height</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">radius))]</span></td>
+</tr>
+<tr class="SectionEnd">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; </span><span class="TextSegSigDiff">(adjust-left</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(adjust-right</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(adjust-top</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(adjust-bottom</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">ball))))))</span></td>
+</tr>
+<tr class="SectionAll">
+<td>&nbsp;</td>
+<td class="AlignCenter">=</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextLineSigDiffMod">(defn collid<span class="TextSegSigDiff">es</span>? [b1 b2]</td>
+<td class="AlignCenter">&lt;&gt;</td>
+<td class="TextLineSigDiffMod">(defn <span class="TextSegSigDiff">balls-</span>collid<span class="TextSegSigDiff">ing</span>? [b1 b2]<span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegInsigDiff">; sk-change: Renamed. (Was collides?.)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegSigDiff">(and</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(not=</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">b1</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">b2)</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegInsigDiff">; sk-change: Added this test so it does not have</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegInsigDiff">; to be done at the call site.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineInsigDiffMod">&nbsp; (let [dx (- (:x b1) (:x b2))</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigDiffMod">&nbsp; <span class="TextSegInsigDiff">&nbsp; &nbsp;&nbsp; </span>(let [dx (- (:x b1) (:x b2))</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineInsigDiffMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; </span>dy (- (:y b1) (:y b2))]</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigDiffMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span>dy (- (:y b1) (:y b2))]</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineInsigDiffMod">&nbsp; &nbsp; (&lt; (Math/sqrt (+ (* dx dx) (* dy dy)))</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigDiffMod">&nbsp; &nbsp; <span class="TextSegInsigDiff">&nbsp; &nbsp;&nbsp; </span>(&lt; (Math/sqrt (+ (* dx dx) (* dy dy)))</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextLineSigDiffMod">&nbsp; &nbsp; &nbsp;&nbsp; (/ (+ (:<span class="TextSegSigDiff">ra</span>di<span class="TextSegSigDiff">us</span> b1) (:<span class="TextSegSigDiff">ra</span>di<span class="TextSegSigDiff">us</span> b2)) 2))))</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp; &nbsp; &nbsp;&nbsp; <span class="TextSegInsigDiff">&nbsp; &nbsp;&nbsp; </span>(/ (+ (:di<span class="TextSegSigDiff">ameter</span> b1) (:di<span class="TextSegSigDiff">ameter</span> b2)) 2<span class="TextSegSigDiff">)</span>))))</td>
+</tr>
+<tr class="SectionBegin">
+<td>&nbsp;</td>
+<td class="AlignCenter">=</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td>(defn vortho [[x y]]</td>
+<td class="AlignCenter">&nbsp;</td>
+<td>(defn vortho [[x y]]</td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp; [(- y) x])</td>
+<td class="AlignCenter">&nbsp;</td>
+<td>&nbsp; [(- y) x])</td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td>(defn vadd [[u v] [x y]]</td>
+<td class="AlignCenter">&nbsp;</td>
+<td>(defn vadd [[u v] [x y]]</td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp; [(+ u x) (+ v y)])</td>
+<td class="AlignCenter">&nbsp;</td>
+<td>&nbsp; [(+ u x) (+ v y)])</td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td>(defn vsub [[u v] [x y]]</td>
+<td class="AlignCenter">&nbsp;</td>
+<td>(defn vsub [[u v] [x y]]</td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp; [(- u x) (- v y)])</td>
+<td class="AlignCenter">&nbsp;</td>
+<td>&nbsp; [(- u x) (- v y)])</td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td>(defn vlen [[x y]]</td>
+<td class="AlignCenter">&nbsp;</td>
+<td>(defn vlen [[x y]]</td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp; (Math/sqrt (+ (* x x) (* y y))))</td>
+<td class="AlignCenter">&nbsp;</td>
+<td>&nbsp; (Math/sqrt (+ (* x x) (* y y))))</td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td>(defn vunit [[x y]]</td>
+<td class="AlignCenter">&nbsp;</td>
+<td>(defn vunit [[x y]]</td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp; [(/ x (vlen [x y]))</td>
+<td class="AlignCenter">&nbsp;</td>
+<td>&nbsp; [(/ x (vlen [x y]))</td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;&nbsp; (/ y (vlen [x y]))])</td>
+<td class="AlignCenter">&nbsp;</td>
+<td>&nbsp;&nbsp; (/ y (vlen [x y]))])</td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td>(defn vmul [a [x y]]</td>
+<td class="AlignCenter">&nbsp;</td>
+<td>(defn vmul [a [x y]]</td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp; [(* a x) (* a y)])</td>
+<td class="AlignCenter">&nbsp;</td>
+<td>&nbsp; [(* a x) (* a y)])</td>
+</tr>
+<tr class="SectionEnd">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextLineSigDiffMod">(defn reflect [ball o<span class="TextSegSigDiff">pposi</span>t<span class="TextSegSigDiff">e</span>]</td>
+<td class="AlignCenter">&lt;&gt;</td>
+<td class="TextLineSigDiffMod">(defn reflect [ball ot<span class="TextSegSigDiff">her-ball</span>]</td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegInsigDiff">;; sk-change:</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegInsigDiff">;; - Playing with different approaches.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegInsigDiff">;; - Renamed some locals while trying to understand how this works.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegInsigDiff">;; - Approach 1 is the original.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegSigDiff">(case</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">2</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod">&nbsp; (let [pb [(:x ball) (:y ball)]</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp; <span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">1</span><span class="TextSegInsigDiff">&nbsp;</span>(let [pb [(:x ball) (:y ball)]</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; </span>po [(:x o<span class="TextSegSigDiff">pposi</span>t<span class="TextSegSigDiff">e</span>) (:y o<span class="TextSegSigDiff">pposi</span>t<span class="TextSegSigDiff">e</span>)]</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>po [(:x ot<span class="TextSegSigDiff">her-ball</span>) (:y ot<span class="TextSegSigDiff">her-ball</span>)]</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">mo</span>ve [(:vx ball) (:vy ball)]</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>ve<span class="TextSegSigDiff">locity</span> [(:vx ball) (:vy ball)]</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineInsigDiffMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; </span>connector (vunit (vsub po pb))</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigDiffMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>connector (vunit (vsub po pb))</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; </span>disp (vsub connector (vunit <span class="TextSegSigDiff">mo</span>ve))</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>disp (vsub connector (vunit ve<span class="TextSegSigDiff">locity</span>))</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; </span>new<span class="TextSegSigDiff">pb</span> (vmul (- (vlen <span class="TextSegSigDiff">mo</span>ve<span class="TextSegSigDiff">))</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(vunit</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(vadd</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">connec</span><span class="TextSegSigDiff">tor</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">disp</span>))<span class="TextSegSigDiff">)]</span></td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>new<span class="TextSegSigDiff">-velocity</span> (vmul (- (vlen ve<span class="TextSegSigDiff">l</span><span class="TextSegSigDiff">o</span><span class="TextSegSigDiff">city</span>))</td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">(vunit</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(vadd</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">connector</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">disp)))]</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod">&nbsp; &nbsp; (assoc ball :vx (first new<span class="TextSegSigDiff">pb</span>) :vy (second new<span class="TextSegSigDiff">pb)</span>)))</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp; &nbsp; <span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; </span>(assoc ball :vx (first new<span class="TextSegSigDiff">-velocity</span>) :vy (second new<span class="TextSegSigDiff">-velocity</span>)))</td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">2</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(let</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">[pb</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">[(:x</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">ball)</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(:y</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">ball)]</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">po</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">[(:x</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">other-ball)</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(:y</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">other-ball)]</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">velocity</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">[(:vx</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">ball)</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(:vy</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">ball)]</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">connector</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(vunit</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(vsub</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">po</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">pb))</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">new-velocity</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(vmul</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(-</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(vlen</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">velocity))</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">(vunit</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">connector))]</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">(assoc</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">ball</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">:vx</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(first</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">new-velocity)</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">:vy</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(second</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">new-velocity)))</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">3</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">ball</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">4</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(assoc</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">ball</span><span class="TextSegInsigDiff">&nbsp;</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">:vx</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(-</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(:vx</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">ball))</span></td>
+</tr>
+<tr class="SectionEnd">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">:vy</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(-</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(:vy</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">ball)))))</span></td>
+</tr>
+<tr class="SectionAll">
+<td>&nbsp;</td>
+<td class="AlignCenter">=</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextLineSigDiffMod">(defn <span class="TextSegSigDiff">m</span>u<span class="TextSegSigDiff">tual</span>-collisions [balls]</td>
+<td class="AlignCenter">&lt;&gt;</td>
+<td class="TextLineSigDiffMod">(defn u<span class="TextSegSigDiff">pdate-for</span>-collisions [balls]<span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegInsigDiff">; Renamed (was mutual-collisions).</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod">&nbsp; (map</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp; (map<span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(fn</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">[ball]</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigLeftMod"><span class="TextSegInsigDiff">&nbsp;&nbsp; </span><span class="TextSegSigDiff">(fn</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">[b]</span></td>
+<td class="AlignCenter">&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod">&nbsp; &nbsp;&nbsp; (let [<span class="TextSegSigDiff">c</span><span class="TextSegSigDiff">r</span><span class="TextSegSigDiff">a</span><span class="TextSegSigDiff">s</span><span class="TextSegSigDiff">h</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(so</span><span class="TextSegSigDiff">me</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">#(if</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(and</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(not=</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">%</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">b)</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(collides?</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">%</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">b))</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">%</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">nil)</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">balls</span><span class="TextSegSigDiff">)]</span></td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp; &nbsp;&nbsp; <span class="TextSegInsigDiff">&nbsp; &nbsp; </span>(let [<span class="TextSegSigDiff">other-ball</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegInsigDiff">; sk-change: Renamed </span><span class="TextSegInsigDiff">(w</span><span class="TextSegInsigDiff">as</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegInsigDiff">cr</span><span class="TextSegInsigDiff">a</span><span class="TextSegInsigDiff">sh).</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegInsigDiff">;; sk-change:</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegInsigDiff">;; - re-wrote the following form in a way that I think</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegInsigDiff">;;&nbsp;&nbsp; is easier to read</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegInsigDiff">;; - no need to test for ball and other-ball being the</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegInsigDiff">;;&nbsp;&nbsp; same -- that's now dealt with in balls-colliding? .</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="TextSegSigDiff">(first</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(filter</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">(partial</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">balls-colliding?</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">ball)</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">balls))]</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod">&nbsp; &nbsp; &nbsp;&nbsp; (if (not (nil? <span class="TextSegSigDiff">c</span><span class="TextSegSigDiff">r</span><span class="TextSegSigDiff">ash</span>))</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp; &nbsp; &nbsp;&nbsp; <span class="TextSegInsigDiff">&nbsp; &nbsp; </span>(if (not (nil? <span class="TextSegSigDiff">other-ball</span>))</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span> (reflect b <span class="TextSegSigDiff">c</span><span class="TextSegSigDiff">r</span><span class="TextSegSigDiff">ash</span>)</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span> (reflect b<span class="TextSegSigDiff">all</span> <span class="TextSegSigDiff">other-ball</span>)</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span> b)))</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod"><span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span> b<span class="TextSegSigDiff">all</span>)))</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextLineInsigDiffMod">&nbsp;&nbsp; balls))</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigDiffMod">&nbsp;&nbsp; <span class="TextSegInsigDiff">&nbsp; &nbsp; </span>balls))</td>
+</tr>
+<tr class="SectionAll">
+<td>&nbsp;</td>
+<td class="AlignCenter">=</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="SectionBegin">
+<td>&nbsp;</td>
+<td class="AlignCenter">&lt;&gt;</td>
+<td class="TextLineInsigRightMod">&nbsp;</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextLineSigDiffMod">(defn draw</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">(defn <span class="TextSegSigDiff">update-state-and-</span>draw<span class="TextSegSigDiff">!</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegInsigDiff">; sk-change: Renamed (was draw).</span></td>
+</tr>
+<tr class="SectionBegin">
+<td>&nbsp; <span class="TextSegElementString">&quot;Example usage of with-translation and with-rotation.&quot;</span></td>
+<td class="AlignCenter">=</td>
+<td>&nbsp; <span class="TextSegElementString">&quot;Example usage of with-translation and with-rotation.&quot;</span></td>
+</tr>
+<tr class="SectionEnd">
+<td>&nbsp; []</td>
+<td class="AlignCenter">&nbsp;</td>
+<td>&nbsp; []</td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextLineInsigDiffMod">&nbsp;</td>
+<td class="AlignCenter">&lt;&gt;</td>
+<td class="TextLineInsigDiffMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegInsigDiff">;; sk-change: Replaced two swap!s with a single swap!.&nbsp; I think that</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineInsigRightMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegInsigDiff">;; better reflects what's happening.</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod">&nbsp; (swap! ball-state <span class="TextSegSigDiff">#</span>(m<span class="TextSegSigDiff">a</span>p (<span class="TextSegSigDiff">co</span>mp move<span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">collide)</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">%)</span>)</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp; (swap! ball-state (<span class="TextSegSigDiff">co</span>mp (<span class="TextSegSigDiff">partial</span><span class="TextSegInsigDiff">&nbsp;</span>m<span class="TextSegSigDiff">a</span>p move)</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod">&nbsp; <span class="TextSegSigDiff">(swa</span><span class="TextSegSigDiff">p!</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">ball-st</span>ate<span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">mutual</span>-collisions<span class="TextSegSigDiff">)</span></td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp; <span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">upd</span>ate<span class="TextSegSigDiff">-for</span>-collisions</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod">&nbsp; </td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp; <span class="TextSegInsigDiff">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="TextSegSigDiff">(partial</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">map</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">maybe-collide-with-wall)))</span></td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineInsigLeftMod"><span class="TextSegInsigDiff">&nbsp; </span></td>
+<td class="AlignCenter">&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextLineSigDiffMod">&nbsp; (background 226)</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp; (<span class="TextSegSigDiff">rosado.processing/</span>background 226)</td>
+</tr>
+<tr class="SectionBegin">
+<td>&nbsp; (doall</td>
+<td class="AlignCenter">=</td>
+<td>&nbsp; (doall</td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;&nbsp; (map draw-ball @ball-state)))</td>
+<td class="AlignCenter">&nbsp;</td>
+<td>&nbsp;&nbsp; (map draw-ball @ball-state)))</td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td>(defn setup []</td>
+<td class="AlignCenter">&nbsp;</td>
+<td>(defn setup []</td>
+</tr>
+<tr class="SectionEnd">
+<td>&nbsp; <span class="TextSegElementString">&quot;Runs once.&quot;</span></td>
+<td class="AlignCenter">&nbsp;</td>
+<td>&nbsp; <span class="TextSegElementString">&quot;Runs once.&quot;</span></td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextLineSigDiffMod">&nbsp; (smooth)</td>
+<td class="AlignCenter">&lt;&gt;</td>
+<td class="TextLineSigDiffMod">&nbsp; (<span class="TextSegSigDiff">rosado.processing/</span>smooth)</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod">&nbsp; (no-stroke)</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp; (<span class="TextSegSigDiff">rosado.processing/</span>no-stroke)</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod">&nbsp; (fill 226)</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp; (<span class="TextSegSigDiff">rosado.processing/</span>fill 226)</td>
+</tr>
+<tr class="SectionEnd">
+<td class="TextLineSigDiffMod">&nbsp; (framerate 20))</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp; (<span class="TextSegSigDiff">rosado.processing/</span>framerate 20))</td>
+</tr>
+<tr class="SectionBegin">
+<td>&nbsp;</td>
+<td class="AlignCenter">=</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="SectionMiddle">
+<td><span class="TextSegElementComment">;; Now we just need to define an applet:</span></td>
+<td class="AlignCenter">&nbsp;</td>
+<td><span class="TextSegElementComment">;; Now we just need to define an applet:</span></td>
+</tr>
+<tr class="SectionEnd">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="SectionBegin">
+<td class="TextLineSigDiffMod">(defapplet balls :title &quot;Coloured balls&quot;</td>
+<td class="AlignCenter">&lt;&gt;</td>
+<td class="TextLineSigDiffMod">(<span class="TextSegSigDiff">rosado.processing.applet/</span>defapplet balls :title &quot;Coloured balls&quot;</td>
+</tr>
+<tr class="SectionMiddle">
+<td class="TextLineSigDiffMod">&nbsp; :setup setup<span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">:draw</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">draw</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">:size</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">[400</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">400])</span></td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigDiffMod">&nbsp; :setup setup</td>
+</tr>
+<tr class="SectionMiddle">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegSigDiff">:draw</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">update-state-and-draw!</span></td>
+</tr>
+<tr class="SectionEnd">
+<td>&nbsp;</td>
+<td class="AlignCenter">&nbsp;</td>
+<td class="TextLineSigRightMod"><span class="TextSegInsigDiff">&nbsp; </span><span class="TextSegSigDiff">:size</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">[window-width</span><span class="TextSegInsigDiff">&nbsp;</span><span class="TextSegSigDiff">window-height])</span></td>
+</tr>
+<tr class="SectionAll">
+<td>&nbsp;</td>
+<td class="AlignCenter">=</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="SectionAll">
+<td class="TextLineSigDiffMod">(run balls)</td>
+<td class="AlignCenter">&lt;&gt;</td>
+<td class="TextLineSigDiffMod">(r<span class="TextSegSigDiff">osado.processing.applet/r</span>un balls)</td>
+</tr>
+</table>
+<br/>
+</body>
+</html>
